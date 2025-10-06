@@ -1,0 +1,113 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Cuidamos a tu mejor amigo</h1>
+            <p class="hero-subtitle">Servicios veterinarios de calidad para tu mascota. Amor y profesionalismo en cada consulta.</p>
+            <div class="hero-buttons">
+                <a href="/contacto/" class="btn btn-primary">Solicitar Cita</a>
+                <a href="#servicios" class="btn btn-secondary">Nuestros Servicios</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            
+            <div class="image-placeholder">
+                <i class="fas fa-paw" style="font-size: 4rem; color: #fff;"></i>
+                <img src="{% static 'assets/img/veterinario.jpg' %}">
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Consultas Médicas</h3>
+                    <p>Revisiones generales y diagnóstico especializado para tu mascota.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Vacunación</h3>
+                    <p>Programa completo de vacunación para todas las edades.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Cirugías</h3>
+                    <p>Intervenciones quirúrgicas con los más altos estándares de seguridad.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Odontología</h3>
+                    <p>Cuidado dental profesional para la salud bucal de tu mascota.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Clínica Veterinaria Animal Care</h2>
+                    <p>Con más de 10 años de experiencia, nos dedicamos al cuidado integral de tus mascotas. Nuestro equipo de profesionales altamente capacitados está comprometido con el bienestar animal.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check"></i> Atención 24/7 para emergencias</li>
+                        <li><i class="fas fa-check"></i> Equipo de última generación</li>
+                        <li><i class="fas fa-check"></i> Médicos especializados</li>
+                        <li><i class="fas fa-check"></i> Ambiente cálido y familiar</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <!-- Imagen placeholder - reemplaza con tu imagen -->
+                    <div class="image-placeholder">
+                        <i class="fas fa-clinic-medical" style="font-size: 4rem; color: #2c3e50;"></i>
+                        <img src="{% static 'assets/img/diseno-de-clinicas-veterinarias.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Section -->
+    <section class="emergency-section">
+        <div class="container">
+            <div class="emergency-banner">
+                <div class="emergency-content">
+                    <h2>Emergencias Veterinarias</h2>
+                    <p>¿Tu mascota necesita atención inmediata? Estamos aquí para ayudarte.</p>
+                    <div class="emergency-contact">
+                        <div class="phone-number">
+                            <i class="fas fa-phone"></i>
+                            <span>+569 123435678</span>
+                        </div>
+                        <a href="tel:+456664" class="btn btn-emergency">Llamar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

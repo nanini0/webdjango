@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-container">
+
+    <h1 class="main-title">Nuestra Pasión Tiene Nombre: "Cuidamos a tu mejor amigo"</h1>
+
+    <div class="intro-text">
+        Nuestra historia comenzó no en un edificio, sino en un sueño compartido.
+        Hace más de 1 año, un grupo de veterinarios apasionados se unió con una misión simple pero profunda:
+        tratar a cada mascota con el mismo amor, respeto y dedicación que merece un miembro de la familia.
+        Creemos firmemente que esos compañeros de cuatro patas, esos amigos incondicionales, son "tu mejor amigo",
+        y para nosotros, es un privilegio y una responsabilidad cuidar de ellos.
+    </div>
+
+    <section class="gallery-section">
+        <h2 class="section-title">Imágenes</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src=" {% static 'assets/img/vet.jpg' %} " alt="Veterinario cuidando mascota">
+            </div>
+            <div class="gallery-item">
+                <img src=" {% static 'assets/img/vet2.jpg' %} " alt="Perro siendo examinado">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'assets/img/vet3.jpg' %}" alt="Clínica veterinaria moderna">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'assets/img/vet4.jpg' %}" alt="Un gato">
+            </div>
+        </div>
+    </section>
+
+    <h2 class="section-subtitle">De un Sueño a un Hogar para la Salud Animal</h2>
+    <div class="about-text">
+        Nuestra clínica veterinaria nació de una modesta consulta y ha crecido gracias a la confianza
+        que los dueños depositan en nosotros al cuidar de sus mascotas.
+        Esta confianza es nuestro fundamento y lo que motiva nuestra mejora continua.<br><br>
+        No nos limitamos a ser médicos; somos oyentes y aliados que combinan el amor genuino por los animales
+        con el más alto profesionalismo.
+        Nuestros servicios de calidad representan la promesa que hacemos a cada familia que confía en nosotros.
+    </div>
+
+</div>
+{% endblock %}

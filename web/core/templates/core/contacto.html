@@ -1,0 +1,133 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="contacto-container">
+    <section class="contacto-hero">
+        <div class="hero-content">
+            <h1>Contacta a PetDev</h1>
+            <p>Estamos aquí para cuidar de tu mascota las 24 horas del día</p>
+        </div>
+    </section>
+    <section class="contacto-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Dirección</h3>
+                    <p>Av. Las Mascotas 123<br>Distrito Veterinario<br>Ciudad Animal</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p>+569 12345678</p>
+                    <p>Emergencias: +569 12345678</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>consultas@vet.correo.com</p>
+                    <p>emergencias@vet.correo.com</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Horario</h3>
+                    <p>Lunes a Viernes: 8:00 - 20:00</p>
+                    <p>Sábados: 9:00 - 14:00</p>
+                    <p>Emergencias 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section class="contacto-formulario">
+        <div class="container">
+            <div class="form-container">
+                <h2>Envíanos un mensaje</h2>
+                <p>¿Tienes alguna pregunta o necesitas programar una cita? Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                 
+                    <div class="form-group full-width">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describe brevemente el motivo de tu consulta..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de ubicación -->
+    <section class="contacto-mapa">
+        <div class="container">
+            <h2>Nuestra ubicación</h2>
+            <div class="mapa-container">
+                <div class="mapa-placeholder">
+                    <div class="mapa-info">
+                        <h3>PetDev Centro Veterinario</h3>
+                        <p>Av. Las Mascotas 123, Distrito Veterinario, Ciudad Animal</p>
+                        <p>Estamos ubicados en el corazón del Distrito Veterinario, con amplio estacionamiento y fácil acceso.</p>
+                    </div>
+                    <div class="mapa-imagen">
+                        <!-- Aquí iría un mapa real o iframe de Google Maps -->
+                        <div class="mapa-ficticio">
+                            <p>Mapa de ubicación</p>
+                            <div class="mapa-dibujo">
+                                <div class="calle"></div>
+                                <div class="calle"></div>
+                                <div class="edificio">
+                                    <span>VetCare</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="faq-contacto">
+        <div class="container">
+            <h2>Preguntas frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿Cuándo debo llevar a mi mascota al veterinario?</h3>
+                    <p>Recomendamos revisiones anuales para mascotas sanas. Si notas cambios en su comportamiento, apetito o estado físico, es mejor programar una cita.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Atienden emergencias fuera de horario?</h3>
+                    <p>Sí, tenemos servicio de emergencias 24/7. Llama al +1 (555) 987-6543 para emergencias fuera de nuestro horario regular.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Qué métodos de pago aceptan?</h3>
+                    <p>Aceptamos efectivo, tarjetas de crédito/débito y la mayoría de seguros para mascotas.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Necesito cita previa?</h3>
+                    <p>Para consultas regulares sí, recomendamos cita previa. Para emergencias, puedes acudir directamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

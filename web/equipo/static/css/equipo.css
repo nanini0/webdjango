@@ -1,0 +1,184 @@
+/* Estilos específicos para la página de equipo */
+    .equipo-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Grid de equipo */
+    .equipo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Tarjeta de miembro */
+    .miembro-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+    }
+
+    .miembro-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Foto del miembro */
+    .miembro-foto {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1.5rem;
+        border: 5px solid #f8f9fa;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .miembro-foto-placeholder {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: white;
+        font-size: 3rem;
+    }
+
+    /* Información del miembro */
+    .miembro-nombre {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .miembro-descripcion {
+        color: #7f8c8d;
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+
+    /* Paginación */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .page-link {
+        padding: 0.75rem 1.5rem;
+        background: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+    }
+
+    .page-link:hover {
+        background: #2980b9;
+        transform: translateY(-2px);
+    }
+
+    .page-disabled {
+        background: #bdc3c7;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    .page-disabled:hover {
+        background: #bdc3c7;
+        transform: none;
+    }
+
+    .current-page {
+        padding: 0.75rem 1.5rem;
+        background: #f8f9fa;
+        color: #2c3e50;
+        border-radius: 8px;
+        font-weight: 600;
+        border: 2px solid #e9ecef;
+    }
+
+    /* Estados vacíos */
+    .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #7f8c8d;
+    }
+
+    .empty-state i {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        color: #bdc3c7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .equipo-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .page-title {
+            font-size: 2rem;
+        }
+        
+        .miembro-card {
+            padding: 1.5rem;
+        }
+        
+        .pagination {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .page-link, .current-page {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .equipo-container {
+            padding: 1rem 0.5rem;
+        }
+        
+        .miembro-foto,
+        .miembro-foto-placeholder {
+            width: 120px;
+            height: 120px;
+        }
+    }
