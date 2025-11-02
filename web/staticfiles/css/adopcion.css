@@ -1,0 +1,201 @@
+/* ===== ESTILOS PARA GRID DE MASCOTAS ===== */
+
+/* Variables específicas */
+:root {
+    --adopcion-primary: #4a9f8e;
+    --adopcion-primary-dark: #3a7f70;
+    --adopcion-secondary: #ff914d;
+    --adopcion-secondary-dark: #e67a35;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --border-radius: 12px;
+}
+
+/* Contenedor del grid */
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+}
+
+/* Columnas individuales */
+.col-md-6.col-lg-3.mb-4 {
+    margin-bottom: 1.5rem;
+    padding: 0 0.75rem;
+}
+
+/* Tarjetas de mascotas */
+.mascota-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.mascota-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen de la mascota */
+.mascota-img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.mascota-card:hover .mascota-img {
+    transform: scale(1.05);
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Badges personalizados */
+.mb-2 {
+    margin-bottom: 1rem !important;
+}
+
+.badge-tipo, .badge-refugio {
+    font-size: 0.75rem;
+    padding: 0.5em 0.8em;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    border: none;
+}
+
+.badge-tipo.bg-primary {
+    background: linear-gradient(135deg, var(--adopcion-primary), var(--adopcion-primary-dark)) !important;
+}
+
+.badge-refugio.bg-success {
+    background: linear-gradient(135deg, var(--adopcion-secondary), var(--adopcion-secondary-dark)) !important;
+}
+
+/* Texto de la tarjeta */
+.card-text {
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.card-text strong {
+    color: var(--adopcion-primary);
+}
+
+.card-text small.text-muted {
+    color: var(--text-light) !important;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Botón */
+.btn-primary.btn-sm {
+    background: linear-gradient(135deg, var(--adopcion-primary), var(--adopcion-primary-dark));
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: auto;
+}
+
+.btn-primary.btn-sm:hover {
+    background: linear-gradient(135deg, var(--adopcion-primary-dark), #2d6558);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 159, 142, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .mascota-img {
+        height: 180px;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .mascota-img {
+        height: 160px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn-primary.btn-sm {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mascota-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efecto de acento superior */
+.mascota-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--adopcion-primary), var(--adopcion-secondary));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.mascota-card:hover::before {
+    transform: scaleX(1);
+}

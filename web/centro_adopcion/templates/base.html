@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetDev - Sitio Oficial</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/adopcion/">Centro de adopcion PetDev</a>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="navbar-menu" id="navbarMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">🐱PetDev</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adopcion">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adopcion/animales">Animales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adopcion/contacto/">Contacto</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main class="content-wrapper">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </main>
+
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navbarMenu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

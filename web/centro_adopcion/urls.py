@@ -3,6 +3,7 @@ from centro_adopcion import views
 
 urlpatterns=[
     path('',views.adopcion_inicio,),
-    path('contacto/',views.contacto,name='contacto')
+    path('contacto/',views.contacto,name='contacto'),
+    path('animales/',views.animales,name='animales')
 ]
 

@@ -1,2 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
-<h1>Hola mundo</h1>
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">🐾 PetDev</h1>
+            <h2 class="hero-subtitle">Encuentra a tu compañero perfecto</h2>
+            <p class="hero-description">
+                Conectamos mascotas amorosas con familias que las adoran. 
+                Cada animal merece un hogar lleno de cariño y cuidado.
+            </p>
+             <br>
+            <div class="hero-buttons">
+                <a href="/adopcion/animales/" class="btn btn-primary">Ver Mascotas</a>
+                <a href="/adopcion/contacto/" class="btn btn-secondary">Cómo Adoptar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

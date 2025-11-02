@@ -20,19 +20,19 @@ from django.conf import settings
 from core import views as view_core
 from equipo import views as view_equipo
 from core import views
+from django.conf.urls.static import static
 
 
+from django.views.static import serve
+from django.urls import re_path
 handler404 = 'core.views.custom_404_view'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',view_core.home, name='home'),
-    path('about/',view_core.about,name='about'),
-    path('contacto/',view_core.contacto, name="contacto"),
-    path('equipo/',view_equipo.equipoV,name='equipo'),
+    path('',include('core.urls')),
+    path('equipo/',include('equipo.urls')),
     path('adopcion/',include('centro_adopcion.urls'))
 
 ]
-
 
 
 

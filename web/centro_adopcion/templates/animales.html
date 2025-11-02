@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lista de Mascotas - PetDev{% endblock %}
+
+{% block extra_css %}
+<!-- CSS específico para la página de mascotas -->
+<link rel="stylesheet" href="{% static 'css/adopcion.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">🐾 Nuestras Mascotas 🐾</h1>
+    <h2>{{nombre_sitio}}</h2>
+    <h2>{{mensaje_bienvenida}}</h2>
+    <!-- Grid de mascotas -->
+    <div class="row">
+        {% for mascota in page_obj %}
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card mascota-card">
+                {% if mascota.foto %}
+                <img src="{{ mascota.foto.url }}" class="card-img-top mascota-img" alt="{{ mascota.nombre }}">
+                {% else %}
+                <img src="https://via.placeholder.com/300x200?text=Sin+Imagen" class="card-img-top mascota-img" alt="Sin imagen">
+                {% endif %}
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{ mascota.nombre }}</h5>
+                    
+                    <div class="mb-2">
+                        <span class="badge badge-tipo bg-primary">{{ mascota.tipo }}</span>
+                        <span class="badge badge-refugio bg-success">{{ mascota.refugio }}</span>
+                    </div>
+                    
+                    <p class="card-text">
+                        <strong>Edad:</strong> {{ mascota.edad }} años<br>
+                        <strong>Refugio:</strong> {{ mascota.refugio }}<br>
+                        <strong>Tipo:</strong> {{ mascota.tipo }}
+                    </p>
+                    
+                    <p class="card-text"><small class="text-muted">{{ mascota.descripcion|truncatewords:15 }}</small></p>
+                    
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMascota{{ mascota.id }}">
+                        Ver detalles
+                    </button>
+                </div>
+            </div>
+        </div>
+
+       
+        
+        {% endfor %}
+    </div>
+
+    <!-- Paginación -->
+    {% if page_obj.has_other_pages %}
+    <div class="pagination-container mt-4">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <li class="page-item active">
+                        <span class="page-link">{{ num }}</span>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">Siguiente</span>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        
+        <div class="text-center text-muted mt-2">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Scripts adicionales si los necesitas -->
+<script>
+    // Scripts específicos para la página de mascotas
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Página de mascotas cargada');
+    });
+</script>
+{% endblock %}
