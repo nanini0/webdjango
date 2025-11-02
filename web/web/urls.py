@@ -19,9 +19,10 @@ from django.urls import path,include
 from django.conf import settings
 from core import views as view_core
 from equipo import views as view_equipo
-from centro_adopcion import views 
+from core import views
 
-handler404 = 'centro_adopcion.views.custom_404_view'
+
+handler404 = 'core.views.custom_404_view'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',view_core.home, name='home'),
