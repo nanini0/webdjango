@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página no encontrada - Error 404</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px;
+        }
+        .error-code { 
+            font-size: 72px; 
+            color: #dc3545;
+        }
+        .error-message { 
+            font-size: 24px; 
+            margin: 20px 0;
+        }
+        .home-link { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background: #007bff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-code">404</div>
+    <div class="error-message">Página no encontrada</div>
+    <p>Lo sentimos, la página que buscas no existe.</p>
+    <a href="{% url 'home' %}" class="home-link">Volver al inicio</a>
+</body>
+</html>

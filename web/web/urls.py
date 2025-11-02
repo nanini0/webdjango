@@ -19,8 +19,9 @@ from django.urls import path,include
 from django.conf import settings
 from core import views as view_core
 from equipo import views as view_equipo
+from centro_adopcion import views 
 
-
+handler404 = 'centro_adopcion.views.custom_404_view'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',view_core.home, name='home'),
@@ -30,6 +31,9 @@ urlpatterns = [
     path('adopcion/',include('centro_adopcion.urls'))
 
 ]
+
+
+
 
 if settings.DEBUG:
     from django.conf.urls.static import static

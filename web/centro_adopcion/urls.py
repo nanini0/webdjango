@@ -5,3 +5,4 @@ urlpatterns=[
     path('',views.adopcion_inicio,),
     path('contacto/',views.contacto,name='contacto')
 ]
+

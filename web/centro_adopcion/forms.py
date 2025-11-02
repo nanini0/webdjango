@@ -1,7 +1,5 @@
 from django import forms
 
-
-
 class ContactoForm(forms.Form):
     nombre = forms.CharField(label='Nombre', max_length=100)
     correo = forms.EmailField(label='Correo electrónico')
