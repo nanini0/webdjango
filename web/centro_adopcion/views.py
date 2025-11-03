@@ -14,7 +14,7 @@ def contacto(request):
 
 def animales(request):
     an = Mascota.objects.all().order_by('tipo', '-nombre')
-    paginator = Paginator(an,4)
+    paginator = Paginator(an,6)
     pag_num = request.GET.get('page',1)
     page_obje = paginator.get_page(pag_num)
     return render(request,'animales.html',{'page_obj':page_obje})

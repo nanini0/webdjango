@@ -199,3 +199,86 @@
 .mascota-card:hover::before {
     transform: scaleX(1);
 }
+/* ===== ESTILOS PARA PAGINADOR ===== */
+.pagination-container {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-link {
+    color: var(--adopcion-primary);
+    border: 1px solid #e0e0e0;
+    padding: 0.6rem 1rem;
+    margin: 0 3px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.page-link:hover {
+    background: linear-gradient(135deg, var(--adopcion-primary), var(--adopcion-primary-dark));
+    color: white;
+    border-color: var(--adopcion-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 159, 142, 0.3);
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(135deg, var(--adopcion-primary), var(--adopcion-primary-dark));
+    border-color: var(--adopcion-primary);
+    color: white;
+    box-shadow: 0 4px 8px rgba(74, 159, 142, 0.3);
+}
+
+.page-item.disabled .page-link {
+    color: #bdc3c7;
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+    transform: none;
+    box-shadow: none;
+}
+
+.text-center.text-muted.mt-2 {
+    color: var(--text-light) !important;
+    font-weight: 600;
+    margin-top: 1rem !important;
+    font-size: 0.95rem;
+}
+
+/* Responsive para paginador */
+@media (max-width: 768px) {
+    .pagination-container {
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .page-link {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        margin: 0 2px;
+    }
+}
+
+@media (max-width: 576px) {
+    .pagination-container {
+        padding: 0.8rem;
+    }
+    
+    .page-link {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+        margin: 0 1px;
+    }
+    
+    .text-center.text-muted.mt-2 {
+        font-size: 0.9rem;
+    }
+}

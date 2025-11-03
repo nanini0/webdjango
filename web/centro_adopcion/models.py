@@ -35,3 +35,30 @@ class Mascota(models.Model):
     
     def __str__(self):
         return self.nombre
+
+
+class ConfiguracionSitio(models.Model):
+    nombre_sitio = models.CharField(
+        max_length=100, 
+        default='Centro de Adopción ❤️',
+        verbose_name='Nombre del sitio'
+    )
+    mensaje_bienvenida = models.CharField(
+        max_length=200, 
+        default='Dale un hogar a un nuevo amigo hoy ❤️',
+        verbose_name='Mensaje de bienvenida'
+    )
+    activo = models.BooleanField(default=True, verbose_name='Configuración activa')
+
+    class Meta:
+        verbose_name = 'Configuración del sitio'
+        verbose_name_plural = 'Configuraciones del sitio'
+
+    def __str__(self):  
+        return f"Configuración: {self.nombre_sitio}"
+
+    def save(self, *args, **kwargs):  
+        # Solo permite una configuración activa
+        if self.activo:
+            ConfiguracionSitio.objects.exclude(pk=self.pk).update(activo=False)
+        super().save(*args, **kwargs)  
