@@ -455,3 +455,31 @@ body {
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+/* Solo estos ajustes al CSS existente */
+.hero-content {
+    text-align: left;
+    max-width: 100%;
+    margin: 0;
+}
+
+.hero-buttons {
+    justify-content: flex-start;
+}
+
+.hero-image {
+    max-width: 85%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+}

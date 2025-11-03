@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load static %}
 {% block extra_css %}
@@ -5,9 +6,11 @@
 {% endblock %}
 
 {% block content %}
+<br>
+
 <!-- Hero Section -->
 <section class="hero-section">
-    <div class="container">
+    <div class="hero-container">
         <div class="hero-content">
             <h1 class="hero-title">🐾 PetDev</h1>
             <h2 class="hero-subtitle">Encuentra a tu compañero perfecto</h2>
@@ -15,14 +18,138 @@
                 Conectamos mascotas amorosas con familias que las adoran. 
                 Cada animal merece un hogar lleno de cariño y cuidado.
             </p>
-             <br>
             <div class="hero-buttons">
                 <a href="/adopcion/animales/" class="btn btn-primary">Ver Mascotas</a>
                 <a href="/adopcion/contacto/" class="btn btn-secondary">Cómo Adoptar</a>
             </div>
         </div>
+        <div class="hero-image-side">
+            <img src="https://images.pexels.com/photos/33357399/pexels-photo-33357399.png" 
+                 class="hero-image" 
+                 alt="Mascota">
+        </div>
     </div>
 </section>
+
+<style>
+.hero-section {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 60px 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: #f59e0b;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #059669;
+    transform: translateY(-2px);
+}
+
+.hero-image-side {
+    flex: 0 0 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .hero-image-side {
+        flex: 0 0 auto;
+        order: -1;
+    }
+    
+    .hero-image {
+        max-width: 280px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+</style>
 
 
 {% endblock %}
